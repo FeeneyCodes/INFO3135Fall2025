@@ -20,11 +20,20 @@ int main(int argc, char* argv[])
 	while (songFile >> songName)
 	{
 //		std::cout << songName << std::endl;
-		pMyStack->push();
+		pMyStack->push(songName);
 	}
 
 	// Print out the data using pop()
+	std::cout << "Stack has " << pMyStack->getStackSize() << std::endl;
 
+	while (pMyStack->getStackSize() > 0)
+	{
+		std::string song = pMyStack->pop();
+		//std::cout << song << std::endl;
+	}
+
+
+	// Delete before returning
 	delete pMyStack;
 
 	return 0;
