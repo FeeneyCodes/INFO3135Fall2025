@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 //int Add5(int y)
 //{
@@ -46,11 +47,21 @@ struct sThingToReturn
 {
 	int total;
 	int average;
+};
 
 // For fun, please try:
 // - redo what Feeney just did
 // - Do a differnt thing with your list
 // - Return: Total AND Average AND min AND max
+
+class cNinja
+{
+public:
+};
+
+//int heyyah = 9;
+//cNinja* pSally = new cNinja();	// NO NO NO
+//cNinja Sally;
 
 int main(int argc, char* argv[])	// char* argv[]
 {
@@ -74,12 +85,34 @@ int main(int argc, char* argv[])	// char* argv[]
 	Add5(&x);
 //	std::cout << x << std::endl;
 
+	std::string myName = "Michael";
+	std::string* pName;
+	pName = &myName;
+	int catAge = 12;
+	
+//	std::string* pName = &myName;
+	std::string* pName2 = (std::string*)&catAge;
 
+	std::cout << myName.size();
+
+	std::cout << (*pName).size();
+	std::cout << pName2->size();
 	
-	
+	std::cout << "---------------" << std::endl;
+	int myArray3[] = { 1, 2, 3 };
+	std::cout << myArray3 << std::endl;
+	std::cout << myArray3[0] << std::endl;
+	std::cout << *(myArray3 + 1) << std::endl;
+
+
+	// Dynamic array allocation
+	int theArray[100'000] = { 0 };
+
+	int* pTheArray = new int[1'000'000'000];
+
+
 	//	Add5(x);
-
-
+	//DoThis(x);
 
 
 	// Your mission, should you choose to accept it:
