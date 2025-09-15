@@ -14,6 +14,11 @@ public:
 	void push(std::string newItem);	// Puts on top of stack
 	std::string pop(void);		// Takes off of top of stack
 
+	void push_back(std::string newItem);
+	//void operator[] or at()
+	std::string getAtIndex(unsigned int index);
+	void setAtIndex(unsigned int index, std::string newItem);
+
 	unsigned int getStackSize(void);
 	bool isEmpty(void);
 
@@ -24,6 +29,9 @@ public:
 
 	// int errorState
 	// int getLastError();
+
+private:
+	void m_resizeArray(void);
 };
 
 
