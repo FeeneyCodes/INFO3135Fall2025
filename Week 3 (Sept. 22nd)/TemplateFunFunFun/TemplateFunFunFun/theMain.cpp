@@ -65,10 +65,21 @@ int main()
 	//cNinja u = addThings<cNinja>(pNinjas, 2);
 //	std::cout << y << std::endl;
 
-	cNinja sally;	sally.firstName = "Sally";
-	cNinja Ali;		Ali.firstName = "Ali";
+	//cNinja sally;	sally.firstName = "Sally";
+	//cNinja Ali;		Ali.firstName = "Ali";
+	//sally.Attack(&Ali);
 
-	sally.Attack(&Ali);
+	cNinja* pSally = new cNinja();
+	pSally->firstName = "Sally";
+
+	cNinja* pAli = new cNinja();
+	pAli->firstName = "Ali";
+
+	pSally->Attack(pAli);
+
+	cMonster* pFred = new cMonster();
+	pFred->firstName = "Fred";
+	pSally->Attack(pFred);
 
 	return 0;
 }

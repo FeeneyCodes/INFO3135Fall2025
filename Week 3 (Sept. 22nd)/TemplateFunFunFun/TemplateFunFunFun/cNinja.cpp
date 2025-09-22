@@ -16,3 +16,12 @@ void cNinja::Attack(cNinja* pTarget)
 	pTarget->health -= 10.0f;
 	return;
 }
+
+void cNinja::Attack(cMonster* pTarget)
+{
+	std::cout << this->firstName
+		<< " attacks "
+		<< pTarget->firstName << std::endl;
+	pTarget->health -= 10.0f;
+	return;
+}
