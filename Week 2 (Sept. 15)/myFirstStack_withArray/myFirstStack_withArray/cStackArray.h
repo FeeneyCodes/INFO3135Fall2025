@@ -17,6 +17,7 @@ public:
 	void push_back(std::string newItem);
 	//void operator[] or at()
 	std::string getAtIndex(unsigned int index);
+//	std::string operator[](unsigned int index);
 	void setAtIndex(unsigned int index, std::string newItem);
 
 	unsigned int getStackSize(void);
@@ -29,6 +30,9 @@ public:
 
 	// int errorState
 	// int getLastError();
+
+//	bool bAllIsLostForeverLostNoHopeOhGawd = false;
+//	bool bad = false;
 
 private:
 	void m_resizeArray(void);

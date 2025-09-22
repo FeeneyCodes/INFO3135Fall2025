@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 
+
 int main(int argc, char* argv[])
 {
 	std::ifstream songFile("SomeSongs.txt");
@@ -38,3 +39,4 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
+
