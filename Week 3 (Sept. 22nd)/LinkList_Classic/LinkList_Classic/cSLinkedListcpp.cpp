@@ -30,7 +30,14 @@ void cSLinkedList::Insert(std::string newData)
 	sNode* pNewNode = new sNode();
 	pNewNode->data = newData;
 	// 
+	// This new node is pointing to the old 
+	//	current nodes next node
+	pNewNode->pNext = this->pCurrent->pNext;
+
+	// Make the old current node point this new node
 	this->pCurrent->pNext = pNewNode;
+	//
+
 	// Move the current to this new node
 	this->pCurrent = pNewNode;
 

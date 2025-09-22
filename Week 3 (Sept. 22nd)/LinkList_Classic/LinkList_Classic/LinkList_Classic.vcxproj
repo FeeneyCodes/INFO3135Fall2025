@@ -123,9 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cDLinkedList.h" />
     <ClInclude Include="cSLinkedList.h" />
+    <ClInclude Include="cSPriortyQueue.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cDLinkedList.cpp" />
     <ClCompile Include="cSLinkedListcpp.cpp" />
     <ClCompile Include="theMain.cpp" />
   </ItemGroup>
