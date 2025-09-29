@@ -18,7 +18,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="theMainLL.cpp">
+    <ClCompile Include="theMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cSong.cpp">

@@ -8,6 +8,8 @@ void PrintOutVecSongs(std::vector<cSong> vecSongs);
 
 cSong makeRandomSong(std::vector<std::string> vecSongNames);
 
+void BubbleSortSongs(std::vector<std::string> &vecSongNames);
+
 int main()
 {
 
@@ -28,8 +30,19 @@ int main()
 		vecSongNames.push_back(sSong);
 	}
 
+	std::cout << vecSongNames.size() << " songs" << std::endl;
 
 	PrintOutVecStrings(vecSongNames);
+
+
+	std::cout << "---------------------" << std::endl;
+	BubbleSortSongs(vecSongNames);
+
+	PrintOutVecStrings(vecSongNames);
+
+
+
+
 
 
 	std::vector<cSong> vecSongs;
@@ -38,12 +51,44 @@ int main()
 		vecSongs.push_back(makeRandomSong(vecSongNames));
 	}
 
-	PrintOutVecSongs(vecSongs);
+//	PrintOutVecSongs(vecSongs);
 
 
 
 	return 0;
 }
+
+void BubbleSortSongs(std::vector<std::string>& vecSongNames)
+{
+	bool bIsSorted = false;
+	unsigned int numPasses = 0;
+
+	while ( ! bIsSorted )
+	{
+		// Assume the list IS sorted (like from the last pass)
+		bIsSorted = true;
+		numPasses++;
+		for (unsigned int index = 0; 
+			 index != (vecSongNames.size() - 1); 
+			 index++)
+		{
+			// Compare current with next
+			if (vecSongNames[index] > vecSongNames[index + 1])
+			{
+				// Swap them (they are out of order)
+				std::string temp = vecSongNames[index + 1];
+				vecSongNames[index + 1] = vecSongNames[index];
+				vecSongNames[index] = temp;
+				bIsSorted = false;
+			}
+		}
+	}//while ( ! bIsSorted )
+	// It's sorted! Huzzah!
+
+	return;
+}
+
+
 
 
 
