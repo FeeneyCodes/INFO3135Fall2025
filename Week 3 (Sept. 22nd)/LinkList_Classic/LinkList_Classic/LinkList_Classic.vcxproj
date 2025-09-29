@@ -130,7 +130,9 @@
   <ItemGroup>
     <ClCompile Include="cDLinkedList.cpp" />
     <ClCompile Include="cSLinkedListcpp.cpp" />
+    <ClCompile Include="cSPriortyQueue_Insert.cpp" />
     <ClCompile Include="theMain.cpp" />
+    <ClCompile Include="theMainLL.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

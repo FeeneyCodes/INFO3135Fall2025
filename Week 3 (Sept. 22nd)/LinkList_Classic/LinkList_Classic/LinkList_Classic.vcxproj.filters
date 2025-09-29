@@ -29,10 +29,16 @@
     <ClCompile Include="cSLinkedListcpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="theMain.cpp">
+    <ClCompile Include="theMainLL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cDLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="theMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cSPriortyQueue_Insert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

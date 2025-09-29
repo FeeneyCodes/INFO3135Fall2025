@@ -3,13 +3,16 @@
 #pragma once
 #include <string>
 
-struct sNode
+struct sPQNode
 {
 	std::string data;		// Data
-	sNode* pNext = NULL;	// 0 or nullptr
+	sPQNode* pNext = NULL;	// 0 or nullptr
+	sPQNode* pNext = NULL;
 	// 
 	float Priority = 0.0f;
 };
+
+// This is based on the DOUBLY linked list
 
 class cSPriortyQueue
 {
@@ -17,9 +20,9 @@ public:
 	cSPriortyQueue();
 	~cSPriortyQueue();
 
-	sNode* pHead = NULL;	// or 0 or nullptr
+	sPQNode* pHead = NULL;	// or 0 or nullptr
 	//sNode* pTail
-	sNode* pCurrent = NULL;
+	sPQNode* pCurrent = NULL;
 	// Maybe return NULL if invalid
 	//sNode* getCurrent(void);
 
