@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="theMain.cpp">
+    <ClCompile Include="theMain_Recursion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="theMain_MergeSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
