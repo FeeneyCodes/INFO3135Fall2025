@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="cHashMap_B">
+      <UniqueIdentifier>{0980ac91-27e0-4f75-b1cc-e935b0cef9f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="theMain.cpp">
@@ -21,13 +24,19 @@
     <ClCompile Include="cHashMap_A.cpp">
       <Filter>cHashMap_A</Filter>
     </ClCompile>
+    <ClCompile Include="cHashMap_B.cpp">
+      <Filter>cHashMap_B</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cHashMap_A.h">
       <Filter>cHashMap_A</Filter>
     </ClInclude>
+    <ClInclude Include="cHashMap_B.h">
+      <Filter>cHashMap_B</Filter>
+    </ClInclude>
     <ClInclude Include="cPerson.h">
-      <Filter>cHashMap_A</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

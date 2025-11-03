@@ -41,6 +41,24 @@ unsigned long cHashMap_A::calcHash_2(std::string value)
 	return hashIndex;
 }
 
+// Adds up the XOR % array_size
+unsigned long cHashMap_A::calcHash_3(std::string value)
+{
+	// Use the last name to hash
+	unsigned int hashIndex = 0;
+	for (unsigned int charIndex = 0;
+		charIndex != value.size(); charIndex++)
+	{
+		int curChar = (int)(value[charIndex]);
+		// XOR some prime number (here it's 17)
+		// https://en.wikipedia.org/wiki/Bitwise_operations_in_C
+		curChar = curChar ^ 17;
+		hashIndex += curChar;
+	}
+	hashIndex = hashIndex % this->m_arraySize;
+
+	return hashIndex;
+}
 
 unsigned long cHashMap_A::getPeopleLoadedCount(void)
 {

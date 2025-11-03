@@ -3,12 +3,19 @@
 #include "cPerson.h"
 #include <vector>
 
-// Does not handle any collisions
-class cHashMap_A
+// DOES handle collisions by using a 
+// 'list' at each location
+class cHashMap_B
 {
 public:
-	cHashMap_A();
+	cHashMap_B();
 	void addPerson(cPerson* pThePerson);
+
+	// Returns NULL if NOT found
+	cPerson* findPerson(
+		std::string first,
+		std::string last,
+		unsigned long long theSIN);
 
 	unsigned long getPeopleLoadedCount(void);
 
@@ -20,7 +27,12 @@ private:
 	// Adds up the XOR % array_size
 	unsigned long calcHash_3(std::string value);
 
-	std::vector<cPerson*> m_vec_hash_People;
+	// std::vector<cPerson*> m_vec_hash_People;
+
+	// This has a "list" at each location
+	// Now, there's a vector at EACH hash location
+	std::vector< std::vector<cPerson*> > m_vec_hash_People;
+
 
 	unsigned long m_arraySize = 1000;
 };

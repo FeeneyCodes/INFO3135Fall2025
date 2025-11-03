@@ -9,7 +9,9 @@
 //Cristiana MINTER 24 014_603_039
 #include "cPerson.h"
 
-#include "cHashMap_A.h"
+#include "cHashMap_A.h"	// Collisions are ignored
+#include "cHashMap_B.h"	// Has list at each location
+
 
 void LoadPeople(std::vector<cPerson>& vecPeople);
 
@@ -19,7 +21,8 @@ int main()
 	LoadPeople(vecPeople);
 
 
-	cHashMap_A hashPeople;
+//	cHashMap_A hashPeople;
+	cHashMap_B hashPeople;
 
 	for (unsigned int index = 0; index != vecPeople.size(); index++)
 	{
@@ -28,6 +31,18 @@ int main()
 	}
 
 	unsigned long loadedCount = hashPeople.getPeopleLoadedCount();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
