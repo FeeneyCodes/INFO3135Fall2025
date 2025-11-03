@@ -7,42 +7,29 @@
 //Jaxon REALES 96 566_486_097
 //Kadynce KUPPINGER 96 020_647_883
 //Cristiana MINTER 24 014_603_039
-class cPerson
-{
-public:
-	std::string first, last;
-	int age;
-	std::string SIN;
-	unsigned long long theSIN;
-};
+#include "cPerson.h"
 
-void LoadPeople(std::vector<cPerson>& vecPeople)
-{
-	std::ifstream peopleFile("SomePeople.txt");
-	cPerson temp;
-	while (peopleFile >> temp.first)
-	{
-		peopleFile >> temp.last
-			>> temp.age
-			>> temp.SIN;
-		// Convert to an int
-		// Kadynce KUPPINGER 96 020_647_883
-		std::stringstream ssSIN;
-		ssSIN
-			<< temp.SIN[0] << temp.SIN[1] << temp.SIN[2]
-			<< temp.SIN[4] << temp.SIN[5] << temp.SIN[6]
-			<< temp.SIN[8] << temp.SIN[9] << temp.SIN[10];
-		ssSIN >> temp.theSIN;
+#include "cHashMap_A.h"
 
-		vecPeople.push_back(temp);
-	}
-	return;
-}
+void LoadPeople(std::vector<cPerson>& vecPeople);
 
 int main()
 {
 	std::vector<cPerson> vecPeople;
 	LoadPeople(vecPeople);
+
+
+	cHashMap_A hashPeople;
+
+	for (unsigned int index = 0; index != vecPeople.size(); index++)
+	{
+		cPerson* pCurrentPerson = &( vecPeople[index] );
+		hashPeople.addPerson(pCurrentPerson);
+	}
+
+	unsigned long loadedCount = hashPeople.getPeopleLoadedCount();
+
+
 
 //	// 020_647_883 --> 020647883
 //	std::vector<cPerson*> vec_pPeople;
@@ -115,3 +102,27 @@ int main()
 	return 0;
 }
 
+
+
+void LoadPeople(std::vector<cPerson>& vecPeople)
+{
+	std::ifstream peopleFile("SomePeople.txt");
+	cPerson temp;
+	while (peopleFile >> temp.first)
+	{
+		peopleFile >> temp.last
+			>> temp.age
+			>> temp.SIN;
+		// Convert to an int
+		// Kadynce KUPPINGER 96 020_647_883
+		std::stringstream ssSIN;
+		ssSIN
+			<< temp.SIN[0] << temp.SIN[1] << temp.SIN[2]
+			<< temp.SIN[4] << temp.SIN[5] << temp.SIN[6]
+			<< temp.SIN[8] << temp.SIN[9] << temp.SIN[10];
+		ssSIN >> temp.theSIN;
+
+		vecPeople.push_back(temp);
+	}
+	return;
+}
