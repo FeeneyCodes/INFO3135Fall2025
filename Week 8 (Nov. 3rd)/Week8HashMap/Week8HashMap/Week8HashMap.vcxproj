@@ -125,11 +125,13 @@
   <ItemGroup>
     <ClCompile Include="cHashMap_A.cpp" />
     <ClCompile Include="cHashMap_B.cpp" />
+    <ClCompile Include="cHashMap_C.cpp" />
     <ClCompile Include="theMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cHashMap_A.h" />
     <ClInclude Include="cHashMap_B.h" />
+    <ClInclude Include="cHashMap_C.h" />
     <ClInclude Include="cPerson.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

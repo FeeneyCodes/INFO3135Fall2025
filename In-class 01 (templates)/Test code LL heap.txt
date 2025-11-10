@@ -1,0 +1,28 @@
+	cDoublyLinkedList<cPerson*> myPL;
+	cPerson* p1 = new cPerson();	p1->first = "Bob";
+	cPerson* p2 = new cPerson();	p2->first = "Sally";
+	cPerson* p3 = new cPerson();	p3->first = "Robin";
+	myPL.insertBeforeCurrent(p1);
+	myPL.insertBeforeCurrent(p2);
+	myPL.insertBeforeCurrent(p3);
+
+	std::cout << "Bob, Sally, Robin" << std::endl;
+	std::cout << "---------------" << std::endl;
+
+	myPL.moveToFirst();
+	for (int count = 0; count != 3; count++)
+	{
+		std::cout << myPL.getCurrent()->first << std::endl;
+		myPL.moveNext();
+	}
+
+	myPL.moveToFirst();
+	myPL.deleteAtCurrent();
+	std::cout << "---------------" << std::endl;
+	myPL.moveToFirst();
+
+	for (int count = 0; count != 2; count++)
+	{
+		std::cout << myPL.getCurrent()->first << std::endl;
+		myPL.moveNext();
+	}

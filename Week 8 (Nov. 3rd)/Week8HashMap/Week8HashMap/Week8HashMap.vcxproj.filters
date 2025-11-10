@@ -16,6 +16,9 @@
     <Filter Include="cHashMap_B">
       <UniqueIdentifier>{0980ac91-27e0-4f75-b1cc-e935b0cef9f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cHashMap_C">
+      <UniqueIdentifier>{6ef59f66-7b4a-4ebe-badd-c66227adb64f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="theMain.cpp">
@@ -27,6 +30,9 @@
     <ClCompile Include="cHashMap_B.cpp">
       <Filter>cHashMap_B</Filter>
     </ClCompile>
+    <ClCompile Include="cHashMap_C.cpp">
+      <Filter>cHashMap_C</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cHashMap_A.h">
@@ -37,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="cPerson.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cHashMap_C.h">
+      <Filter>cHashMap_C</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
