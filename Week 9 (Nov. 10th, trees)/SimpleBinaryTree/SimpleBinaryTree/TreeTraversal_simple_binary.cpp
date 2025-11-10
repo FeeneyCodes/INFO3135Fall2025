@@ -15,6 +15,8 @@ public:
 	//	delete pLeft;
 	//	delete pRight;
 	//}
+
+	// Some ways to output the node...
 	void inorder(Node* pNode)
 	{
 		if (pNode == NULL) return;
