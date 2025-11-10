@@ -1,8 +1,10 @@
-/#define _CRTDBG_MAP_ALLOC
+#define _CRTDBG_MAP_ALLOC
 #include <iostream>
 #include <crtdbg.h>
 
-class Node {
+
+class Node 
+{
 public:
 	Node* pLeft;
 	Node* pRight;
@@ -13,39 +15,42 @@ public:
 	//	delete pLeft;
 	//	delete pRight;
 	//}
+	void inorder(Node* pNode)
+	{
+		if (pNode == NULL) return;
+		inorder(pNode->pLeft);
+		std::cout << pNode->pRight << " ";
+		inorder(pNode->pRight);
+	}
+
+	void preorder(Node* pNode)
+	{
+		if (pNode == nullptr) return;
+		std::cout << pNode->theData << " ";
+		preorder(pNode->pLeft);
+		preorder(pNode->pRight);
+	}
+
+	void postorder(Node* pNode)
+	{
+		if (pNode == nullptr) return;
+		postorder(pNode->pLeft);
+		postorder(pNode->pRight);
+		std::cout << pNode->theData << " ";
+	}
+
+	void deallocate(Node* pNode)
+	{
+		if (pNode == nullptr) return;
+		deallocate(pNode->pLeft);
+		deallocate(pNode->pRight);
+		delete pNode;
+	}
 };
 
-void inorder(Node* pNode)
-{
-	if (pNode == NULL) return;
-	inorder(pNode->pLeft);
-	cout << pNode->pRight << " ";
-	inorder(pNode->pRight);
-}
 
-void preorder(pNode* node)
-{
-	if (pNode == nullptr) return;
-	cout << pNode->data_ << " ";
-	preorder(pNode->pLeft);
-	preorder(pNode->pRight);
-}
 
-void postorder(pNode* node)
-{
-	if (pNode == nullptr) return;
-	postorder(pNode->pLeft);
-	postorder(pNode->pRight);
-	cout << pNode->theData << " ";
-}
 
-void deallocate(pNode* node)
-{
-	if (pNode == nullptr) return;
-	deallocate(pNode->pLeft);
-	deallocate(pNode->pRight);
-	delete pNode;
-}
 
 int main()
 {
@@ -81,7 +86,7 @@ int main()
 	Node* pRoot = new Node(5);
 	
 	pRoot->pLeft = new Node(2);
-	pRoot->right_ = new Node(12);
+	pRoot->pRight = new Node(12);
 	
 	//       (2)
 	pRoot->pLeft->pLeft = new Node(1);
@@ -95,17 +100,17 @@ int main()
 	pRoot->pRight->pRight->pRight = new Node(25);
 
 	// traverse the tree inorder
-	cout << "Inorder: ";
-	inorder(pRoot);
-	cout << "\nPreorder: ";
-	preorder(pRoot);
-	cout << "\nPostorder: ";
-	postorder(pRoot);
+	std::cout << "Inorder: ";
+//	inorder(pRoot);
+	std::cout << "\nPreorder: ";
+//	preorder(pRoot);
+	std::cout << "\nPostorder: ";
+//	postorder(pRoot);
 	// solution 1:   
 	//    Create a destructor that deletes left and right and call delete root;
 	// solution 2: 
 	//    Traverse the tree and delete nodes
-	deallocate(pRoot);
+//	deallocate(pRoot);
 
 	// Brute force
 	//delete root->right->right->left;

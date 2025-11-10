@@ -2,6 +2,7 @@
 #include <iostream>
 #include <crtdbg.h>
 
+
 class Node 
 {
 public:
@@ -25,7 +26,7 @@ public:
 	void preorder(Node* pNode)
 	{
 		if (pNode == nullptr) return;
-		std::cout << pNode->data << " ";
+		std::cout << pNode->theData << " ";
 		preorder(pNode->pLeft);
 		preorder(pNode->pRight);
 	}
