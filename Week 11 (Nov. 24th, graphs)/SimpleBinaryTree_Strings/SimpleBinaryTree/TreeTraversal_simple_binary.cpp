@@ -18,7 +18,26 @@ class Node
 public:
 	Node* pLeft;	 // Less than
 	Node* pRight;    // Greater than
+
+	float costLeft;			// 4.0
+	float costRight;		// 10.0
+
 //	Node* pParent;	// To go up the tree
+	int depth;
+
+	float getDepthCostToNode(std::string nodeToFind, float runningTotal)
+	{
+		if (this->theData == nodeToFind)
+		{
+
+		}
+		runningTotal += this->costLeft;
+		getDepthCostToNode(
+
+
+
+
+	}
 
 //	Node* pTheNodes[100];
 //	std::vector<Node*> vecNodes;
@@ -39,7 +58,7 @@ public:
 		// Less than -> Left node
 		// Greater than -> Right node
 		// If the node is NULL, that we insert there
-
+		
 		Node* pCurNode = this;
 		this->m_insert(pCurNode, value);
 
@@ -129,7 +148,33 @@ public:
 		deallocate(pNode->pRight);
 		delete pNode;
 	}
+
 };
+
+void printNodesAtDepth(
+	Node* pNode,
+	unsigned int depthToPrint,	// Print nodes that are "this" deep
+	unsigned int currentDepth,	// By ref
+	unsigned int maxDepth)
+{
+	// to far? 
+	if (currentDepth >= maxDepth)
+	{
+		return;
+	}
+	// At correct depth
+	if (currentDepth == depthToPrint)
+	{
+		std::cout << pNode->theData << std::endl;
+	}
+	// Recursively call left and right
+	// TODO: return on NULL nodes
+	// TODO: return if already at "depthToPrint"
+	printNodesAtDepth(pNode->pLeft, depthToPrint, currentDepth++, maxDepth);
+	printNodesAtDepth(pNode->pRight, depthToPrint, currentDepth++, maxDepth);
+
+
+}
 
 
 
@@ -168,6 +213,14 @@ int main()
 	while (cityFile >> aCityName)
 	{
 		pRoot->insert(aCityName);
+	}
+		
+	// Maximum depth = 4
+	for (unsigned int depthToPrint = 0; depthToPrint < 5; depthToPrint++)
+	{
+		unsigned int currentDepth = 0;
+		printNodesAtDepth(pRoot, depthToPrint, currentDepth, 5);
+
 	}
 
 	return 0;
