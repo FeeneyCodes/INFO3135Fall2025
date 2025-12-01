@@ -170,6 +170,19 @@ int main()
 		pRoot->insert(aCityName);
 	}
 
+	// You
+	// Your 2 parents
+	// Your 4 grandparents
+
+	// Print this out like:
+	// You, 
+	// your parents, 
+	// your grandparent
+
+	// Or this way
+	// GP 1, P1, GP 2, 
+	// "Left to right" going through all the nodes
+
 	return 0;
 }
 

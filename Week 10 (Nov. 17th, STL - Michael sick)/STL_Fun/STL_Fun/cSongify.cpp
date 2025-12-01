@@ -122,5 +122,5 @@ bool cSongify::AddUser(cPerson newPerson, std::string& errorString)
 	this->m_vecPeople.push_back(newPerson);
 		 
 
-	return;
+	return true;
 }
